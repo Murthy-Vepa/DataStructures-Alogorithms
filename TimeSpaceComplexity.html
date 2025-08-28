@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structure Complexity Reference</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 12px 8px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            transition: background-color 0.3s ease;
+        }
+
+        th {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .data-structure {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            font-weight: 600;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .complexity-excellent {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+            font-weight: 600;
+        }
+
+        .complexity-good {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            font-weight: 600;
+        }
+
+        .complexity-poor {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            font-weight: 600;
+        }
+
+        .complexity-na {
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover td:not(.data-structure) {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 4px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        .legend {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Structure Time & Space Complexity</h1>
+        
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2" style="vertical-align: middle;">Data Structure</th>
+                        <th colspan="4" class="section-header">Average Time Complexity</th>
+                        <th colspan="4" class="section-header">Worst Time Complexity</th>
+                        <th rowspan="2" class="section-header" style="vertical-align: middle;">Worst Space<br>Complexity</th>
+                    </tr>
+                    <tr>
+                        <th>Access</th>
+                        <th>Search</th>
+                        <th>Insertion</th>
+                        <th>Deletion</th>
+                        <th>Access</th>
+                        <th>Search</th>
+                        <th>Insertion</th>
+                        <th>Deletion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="data-structure">Array</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-excellent">O(1)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">Stack</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-excellent">O(1)</td>
+                        <td class="complexity-excellent">O(1)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">Queue</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-excellent">O(1)</td>
+                        <td class="complexity-excellent">O(1)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">Singly-Linked List</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-excellent">O(1)</td>
+                        <td class="complexity-excellent">O(1)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">Doubly-Linked List</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-poor">Θ(n)</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-excellent">O(1)</td>
+                        <td class="complexity-excellent">O(1)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">Skip List</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n log n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">Hash Table</td>
+                        <td class="complexity-na">N/A</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-excellent">Θ(1)</td>
+                        <td class="complexity-na">N/A</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">Binary Search Tree</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">Cartesian Tree</td>
+                        <td class="complexity-na">N/A</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-na">N/A</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">B-Tree</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">Red-Black Tree</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">Splay Tree</td>
+                        <td class="complexity-na">N/A</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-na">N/A</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">AVL Tree</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-good">O(log n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                    <tr>
+                        <td class="data-structure">KD Tree</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-good">Θ(log n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                        <td class="complexity-poor">O(n)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color complexity-excellent"></div>
+                <span><strong>Excellent:</strong> O(1) - Constant time</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color complexity-good"></div>
+                <span><strong>Good:</strong> O(log n) - Logarithmic time</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color complexity-poor"></div>
+                <span><strong>Poor:</strong> O(n) or O(n log n) - Linear/Linearithmic time</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color complexity-na"></div>
+                <span><strong>N/A:</strong> Operation not applicable</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
